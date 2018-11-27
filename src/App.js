@@ -2,7 +2,8 @@ import React, { Component } from "react";
 
 import styled from "styled-components";
 
-import Iphone_6 from "./lib/Iphone_6";
+import Iphone6 from "./lib/Iphone6";
+import Macbook from "./lib/MacbookPro";
 
 const Grid = styled.div`
   height: 100vh;
@@ -16,9 +17,14 @@ const Grid = styled.div`
 class App extends Component {
   render() {
     return (
-      <Grid>
-        <Iphone_6 />
-      </Grid>
+      <div>
+        <Grid>
+          <Iphone6 />
+        </Grid>
+        <Grid>
+          <Macbook />
+        </Grid>
+      </div>
     );
   }
 }
