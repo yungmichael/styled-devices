@@ -57,6 +57,7 @@ const Content = styled.div`
 `;
 
 const Power = styled.div`
+
   ::after {
     content: "";
     background: #323232;
@@ -64,7 +65,7 @@ const Power = styled.div`
     height: 6px;
     margin: 0 auto;
     position: relative;
-    width: 100%;
+    width: 100px;
   }
   ::before {
     content: "";
@@ -74,7 +75,7 @@ const Power = styled.div`
     height: 50px;
     margin: 0 auto;
     position: relative;
-    width: 100%;
+    width: 80px;
   }
 `;
 
