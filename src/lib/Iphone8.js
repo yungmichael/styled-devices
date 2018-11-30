@@ -110,7 +110,7 @@ const Volume = styled.div`
   }
 `;
 
-class Iphone6 extends Component {
+class Iphone8 extends Component {
   render() {
     return (
       <Container>
@@ -127,4 +127,4 @@ class Iphone6 extends Component {
   }
 }
 
-export default Iphone6;
+export default Iphone8;
