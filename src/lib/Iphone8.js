@@ -2,12 +2,6 @@ import React, { Component } from "react";
 
 import styled from "styled-components";
 
-const Container = styled.div`
-  height: 50vh;
-  width: 50vw;
-  background-color: inherit;
-`;
-
 const Iphone = styled.div`
   height: 50vh;
   width: calc(50vh * 0.48);
@@ -113,16 +107,14 @@ const Volume = styled.div`
 class Iphone8 extends Component {
   render() {
     return (
-      <Container>
-        <Iphone>
-          <div />
-          <Speaker />
-          <Screen />
-          <Button />
-          <Power />
-          <Volume />
-        </Iphone>
-      </Container>
+      <Iphone>
+        <div />
+        <Speaker />
+        <Screen />
+        <Button />
+        <Power />
+        <Volume />
+      </Iphone>
     );
   }
 }

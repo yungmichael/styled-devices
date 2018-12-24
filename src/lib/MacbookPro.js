@@ -2,12 +2,6 @@ import React, { Component } from "react";
 
 import styled from "styled-components";
 
-const Container = styled.div`
-  height: 50vh;
-  width: 50vw;
-  background-color: inherit;
-`;
-
 const MackbookCase = styled.div`
   height: 50vh;
   width: 50vh;
@@ -75,15 +69,13 @@ const Bottom2 = styled.div`
 class Macbook extends Component {
   render() {
     return (
-      <Container>
-        <MackbookCase>
-          <Screen>
-            <HomeScreen />
-          </Screen>
-          <Bottom />
-          <Bottom2 />
-        </MackbookCase>
-      </Container>
+      <MackbookCase>
+        <Screen>
+          <HomeScreen />
+        </Screen>
+        <Bottom />
+        <Bottom2 />
+      </MackbookCase>
     );
   }
 }

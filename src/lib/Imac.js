@@ -2,94 +2,69 @@ import React, { Component } from "react";
 
 import styled from "styled-components";
 
-const Container = styled.div`
-  height: 50vh;
-  width: 50vh;
-  background-color: inherit;
-`;
-
-const ImacDevice = styled.div`
-  height: 38.78vh;
-  width: 50vh;
-`;
-
-const ImacFrame = styled.div`
-  background: #fefefe;
+const Screen = styled.div`
+  width: 624px;
+  height: 428px;
+  background: #111;
   border-radius: 18px;
-  box-shadow: inset 0 0 0 2px #dedede;
-  height: 88%;
-  padding: 24px 24px 80px 24px;
   position: relative;
-  width: 100%;
-
-  ::before {
-    bottom: 15px;
-    color: #333;
-    content: "";
-    font-size: 24px;
-    height: 24px;
-    left: 50%;
-    line-height: 24px;
-    margin-left: -100px;
-    position: absolute;
-    text-align: center;
-    width: 200px;
-    z-index: 9;
-  }
 
   ::after {
-    background: #333;
-    border-radius: 0 0 18px 18px;
-    bottom: 2px;
+    background: #f2f2f2;
+    border-radius: 0 0 16px 16px;
+    bottom: -10px;
     content: "";
-    height: 54px;
-    left: 2px;
+    height: 64px;
+    left: 0px;
     position: absolute;
-    width: 100%;
+    width: 620px;
+    border: 2px solid #cdcdcd;
   }
 `;
 
-const Content = styled.div`
-  border: 2px solid #333;
+const Wallpaper = styled.div`
+  width: 576px;
+  height: 324px;
+  background: url("https://picturepan2.github.io/devices.css/src/img/bg-08.jpg");
+  background-size: cover;
+  position: relative;
+  top: 24px;
+  left: 24px;
   border-radius: 2px;
-  height: 100%;
-  width: 100%;
+  border: 2px solid #121212;
 `;
 
-const Power = styled.div`
+const Bottom = styled.div`
+  border-bottom: 60px solid #f2f2f2;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  height: 0;
+  position: relative;
+  top: 110px;
+  margin: auto;
+  width: 110px;
 
   ::after {
-    content: "";
-    background: #323232;
+    background: #d2d2d2;
     border-radius: 2px;
     height: 6px;
     margin: 0 auto;
     position: relative;
-    width: 100px;
-  }
-  ::before {
+    width: 180px;
     content: "";
-    border: solid transparent;
-    border-bottom-color: #343434;
-    border-width: 0 8px 50px 8px;
-    height: 50px;
-    margin: 0 auto;
-    position: relative;
-    width: 80px;
+    display: block;
+    top: 60px;
+    left: -35px;
   }
 `;
 
 class Imac extends Component {
   render() {
     return (
-      <Container>
-        <ImacDevice>
-          <ImacFrame>
-            <Content />
-          </ImacFrame>
-          <Power />
-        </ImacDevice>
-      </Container>
+      <Screen>
+        <Wallpaper />
+        <Bottom />
+      </Screen>
     );
   }
 }

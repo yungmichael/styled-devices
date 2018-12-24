@@ -5,7 +5,6 @@ import styled from "styled-components";
 import Iphone8 from "./lib/Iphone8";
 import Macbook from "./lib/MacbookPro";
 import Imac from "./lib/Imac";
-import AppleWatch from "./lib/AppleWatch";
 
 const Grid = styled.div`
   height: 100vh;
@@ -16,22 +15,30 @@ const Grid = styled.div`
   justify-content: center;
 `;
 
+const Container = styled.div`
+  height: 50vh;
+  width: 50vh;
+  background-color: inherit;
+`;
+
 class App extends Component {
   render() {
     return (
       <div>
         <Grid>
-          <Iphone8 />
+          <Container>
+            <Iphone8 />
+          </Container>
         </Grid>
         <Grid>
-          <Macbook />
+          <Container>
+            <Macbook />
+          </Container>
         </Grid>
         <Grid>
           <Imac />
         </Grid>
-        <Grid>
-          <AppleWatch />
-        </Grid>
+        <Grid />
       </div>
     );
   }
