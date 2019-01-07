@@ -5,15 +5,19 @@ import styled from "styled-components";
 const Case = styled.div`
   width: 407px;
   height: 825px;
-  background: #333;
+  background: #000;
   padding: 28px;
   border-radius: 60px;
-
-  transform: scale(0.8);
+  box-shadow: inset 0px 0px 0px 2px #000, inset 0px 0px 0px 6px #e4e4e4,
+    inset 0px 0px 0px 7px #000, inset 0px 0px 0px 10px #5c5c5c,
+    inset 0px 0px 0px 11px #000, inset 10px 0px 3px 6px #afafaf,
+    inset 10px 3px 8px #7b7b7b, inset 10px 0px 3px 9px #585858,
+    inset -10px 0px 3px 6px #afafaf, inset -10px 3px 8px #7b7b7b,
+    inset -10px 0px 3px 9px #585858;
 `;
 
 const Screen = styled.div`
-  background: #000;
+  background: #d7004e;
   height: 100%;
   width: 100%;
   border-radius: 35px;
