@@ -3,10 +3,10 @@ import React, { Component } from "react";
 import styled from "styled-components";
 
 const Case = styled.div`
-  width: 407px;
-  height: 825px;
+  width: 380px;
+  height: 820px;
   background: #000;
-  padding: 28px;
+  padding: 25px;
   border-radius: 60px;
   box-shadow: inset 0px 0px 0px 2px #000, inset 0px 0px 0px 6px #e4e4e4,
     inset 0px 0px 0px 7px #000, inset 5px 0px 1px 6px #2f2f2f,
@@ -17,15 +17,16 @@ const Case = styled.div`
     inset -10px 0px 3px 9px #585858, inset -20px 0px 13px 11px #0f0f0f,
     inset 20px 0px 7px 11px #0f0f0f, inset 0px 0px 0px 19px #636363;
   position: relative;
-  transform: scale(0.8);
+  transform: scale(1);
 `;
 
 const Screen = styled.div`
-  background: #d7004e;
-  height: 100%;
-  width: 100%;
+  background: url("http://cdn.osxdaily.com/wp-content/uploads/2017/11/iphone-x-screenshot.jpg");
+  height: 820px;
+  width: 380px;
   border-radius: 35px;
   position: relative;
+  background-size: cover;
 `;
 
 const Notch = styled.div`
