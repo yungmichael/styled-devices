@@ -16,7 +16,8 @@ const Case = styled.div`
     inset -10px 0px 3px 6px #afafaf, inset -10px 3px 8px #7b7b78,
     inset -10px 0px 3px 9px #585858, inset -20px 0px 13px 11px #0f0f0f,
     inset 20px 0px 7px 11px #0f0f0f, inset 0px 0px 0px 19px #636363;
-  display: relative;
+  position: relative;
+  transform: scale(0.8);
 `;
 
 const Screen = styled.div`
@@ -40,13 +41,88 @@ const Notch = styled.div`
   ::before {
     content: "";
     position: absolute;
-    width: 42px;
-    height: 9px;
+    width: 50px;
+    height: 7px;
     background: #222;
-    top: 50%;
+    top: 35%;
     left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    border-radius: 5px;
   }
+
+  ::after {
+    content: "";
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    background: #222;
+    top: 35%;
+    left: 70%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+  }
+`;
+
+const VolumeBtns = styled.div`
+  position: absolute;
+  height: 60px;
+  width: 3px;
+  left: -3.5px;
+  top: 180px;
+  background: #fff;
+  border-radius: 5px 0px 0px 5px;
+  border: 1px solid #5f5f5f;
+  border-right: 1px solid #000;
+  box-shadow: inset 0px 3px 2px 0px #333, inset 0px -3px 2px 0px #333;
+
+  ::before {
+    position: absolute;
+    height: 60px;
+    width: 3px;
+    left: -1px;
+    top: 80px;
+    background: #fff;
+    border-radius: 5px 0px 0px 5px;
+    border: 1px solid #5f5f5f;
+    border-right: 1px solid #000;
+    box-shadow: inset 0px 3px 2px 0px #333, inset 0px -3px 2px 0px #333;
+    content: "";
+  }
+
+  ::after {
+    position: absolute;
+    height: 33px;
+    width: 3px;
+    left: -1px;
+    top: -63px;
+    background: #fff;
+    border-radius: 5px 0px 0px 5px;
+    border: 1px solid #5f5f5f;
+    border-right: 1px solid #000;
+    box-shadow: inset 0px 3px 2px 0px #333, inset 0px -3px 2px 0px #333;
+    content: "";
+  }
+`;
+
+const PowerBtn = styled.div`
+  position: absolute;
+  height: 100px;
+  width: 3px;
+  right: -3.5px;
+  top: 200px;
+  background: #fff;
+  border-radius: 0px 5px 5px 0px;
+  border: 1px solid #5f5f5f;
+  border-left: 1px solid #000;
+  box-shadow: inset 0px 3px 2px 0px #333, inset 0px -3px 2px 0px #333;
 `;
 
 class IphoneX extends Component {
@@ -56,6 +132,8 @@ class IphoneX extends Component {
         <Screen>
           <Notch />
         </Screen>
+        <VolumeBtns />
+        <PowerBtn />
       </Case>
     );
   }
