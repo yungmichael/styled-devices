@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 
 import Iphone8 from "./lib/Iphone8";
+import IphoneX from "./lib/IphoneX";
 import Macbook from "./lib/MacbookPro";
 import Imac from "./lib/Imac";
 import AppleWatch from "./lib/AppleWatch";
@@ -41,6 +42,9 @@ class App extends Component {
         </Grid>
         <Grid>
           <AppleWatch />
+        </Grid>
+        <Grid>
+          <IphoneX />
         </Grid>
       </div>
     );
