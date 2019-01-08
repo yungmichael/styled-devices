@@ -17,7 +17,7 @@ const Case = styled.div`
     inset -10px 0px 3px 9px #585858, inset -20px 0px 13px 11px #0f0f0f,
     inset 20px 0px 7px 11px #0f0f0f, inset 0px 0px 0px 19px #636363;
   position: relative;
-  transform: scale(1);
+  transform: scale(0.6);
 `;
 
 const Screen = styled.div`

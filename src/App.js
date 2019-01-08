@@ -33,9 +33,7 @@ class App extends Component {
           </Container>
         </Grid>
         <Grid>
-          <Container>
-            <Macbook />
-          </Container>
+          <Macbook />
         </Grid>
         <Grid>
           <Imac />
