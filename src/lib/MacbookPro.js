@@ -78,17 +78,12 @@ const Keyboard = styled.div`
   }
 `;
 
-const VolumeBtns = styled.div``;
-
-const PowerBtn = styled.div``;
-
 class MacbookPro extends Component {
   render() {
     return (
       <Case>
         <Screen />
         <Keyboard />
-        <PowerBtn />
       </Case>
     );
   }
