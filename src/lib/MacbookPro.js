@@ -7,10 +7,10 @@ const Case = styled.div`
   height: 735px;
   background: #000;
   padding: 60px 40px;
-  border-radius: 40px;
-  box-shadow: inset 0px 0px 0px 4px #8d8d8f, inset 0px 0px 0px 8px #202022;
+  border-radius: 40px 40px 15px 15px / 40px 40px 35px 35px;
+  box-shadow: inset 0px 0px 0px 3px #8d8d8f, inset 0px 0px 0px 6px #202022;
   position: relative;
-  transform: scale(0.6);
+  transform: scale(1);
 
   ::before {
     position: absolute;
@@ -26,14 +26,27 @@ const Case = styled.div`
 
   ::after {
     position: absolute;
-    width: 100%;
+    width: 1243.5px;
     height: 815px;
-    height: 10px;
+    height: 40px;
+    top: 815px;
+    content: "MacBook Pro";
+    color: #a3a3a5;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    padding-top: 5px;
+    font-size: large;
+    background: #1d1d1d;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 0px 0px 15px 15px / 0px 0px 35px 35px;
+    z-index: 0;
   }
 `;
 
 const Screen = styled.div`
-  background: url("http://cdn.osxdaily.com/wp-content/uploads/2017/11/iphone-x-screenshot.jpg");
+  background: url("https://wallpaper-house.com/data/out/10/wallpaper2you_416137.jpg");
   width: 100%;
   height: 100%;
   position: relative;
@@ -53,6 +66,7 @@ const Keyboard = styled.div`
     inset -17px 0px 15px -8px #2b2c32, inset 42px 0px 15px -6px #b2b3b8,
     inset -42px 0px 15px -5px #b2b3b8, inset 125px 0px 60px -60px #58595d,
     inset -125px 0px 60px -60px #58595d;
+  z-index: 1;
 
   ::before {
     position: absolute;

@@ -2,79 +2,37 @@ import React, { Component } from "react";
 
 import styled from "styled-components";
 
-const Device = styled.div`
-  height: 234px;
-  width: 200px;
-  margin: auto;
-  position: relative;
+const Case = styled.div`
+  width: 210px;
+  height: 250px;
+  background: #ececec;
+  border-radius: 40px;
+  padding: 10px;
+  box-shadow: inset 0px 0px 3px 3px #b2b2b2;
 `;
 
 const Screen = styled.div`
-  background: #0d0d0d;
-  border-radius: 40px;
-
-  box-shadow: inset 0 0 0 0.1em #bdbdbd, inset 0 0 0.2em 0.2em #bebebe,
-    inset 0 0.3em 0.3em 0.4em #070707, inset 0 -0.3em 0.1em 0.1em #070707,
-    inset 0 0 0 0.9em #fff, inset 0 0 0 1.05em #313131,
-    inset 3.5em -0.5em 2em -2em #a4a4a4, inset -1.2em -0em 0.5em 0em #a4a4a4,
-    inset -0.4em -1.1em 0.5em 0em #a4a4a4;
-  height: 100%;
-  padding: 32px;
-  position: relative;
-  width: 100%;
-
-  ::after {
-    border-radius: 30px;
-    content: "";
-    height: 95%;
-    left: 8px;
-    position: absolute;
-    top: 8px;
-    width: 94%;
-  }
-`;
-
-const Wallpaper = styled.div`
-  border-radius: 2px;
   height: 100%;
   width: 100%;
-  background: #222;
+  background: #060606;
+  border-radius: 30px;
+  box-shadow: inset 0px 0px 0px 1px #333, inset 54px 0px 40px -40px #737373,
+    inset -5px -5px 5px -1px #9a9a9a;
 `;
 
-const Buttons = styled.div`
-  background: #e2e3e4;
-  border-left: 2px solid #adb0b3;
-  border-radius: 8px 4px 4px 8px / 20px 4px 4px 20px;
-  box-shadow: inset 0 0 2px 2px #adb0b3;
-  height: 56px;
-  position: absolute;
-  right: -78px;
-  top: 65px;
-  width: 17px;
-  z-index: 9;
+const Wallpaper = styled.div``;
 
-  ::after {
-    background: #e2e3e4;
-    border-radius: 4px 2px 2px 4px / 10px 2px 2px 10px;
-    content: "";
-    height: 75px;
-    position: absolute;
-    right: 8px;
-    top: 88px;
-    box-shadow: inset 0 0 2px 2px #adb0b3;
-    width: 8px;
-  }
-`;
+const Buttons = styled.div``;
 
 class AppleWatch extends Component {
   render() {
     return (
-      <Device>
+      <Case>
         <Screen>
           <Wallpaper />
         </Screen>
         <Buttons />
-      </Device>
+      </Case>
     );
   }
 }
