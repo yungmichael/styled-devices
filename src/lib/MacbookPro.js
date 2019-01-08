@@ -10,7 +10,7 @@ const Case = styled.div`
   border-radius: 40px 40px 15px 15px / 40px 40px 35px 35px;
   box-shadow: inset 0px 0px 0px 3px #8d8d8f, inset 0px 0px 0px 6px #202022;
   position: relative;
-  transform: scale(1);
+  transform: scale(0.7);
 
   ::before {
     position: absolute;
