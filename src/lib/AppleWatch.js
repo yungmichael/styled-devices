@@ -39,15 +39,31 @@ const Screen = styled.div`
 
 const Buttons = styled.div`
   position: absolute;
-  height: 100px;
-  width: 3px;
+  height: 70px;
+  width: 5px;
   right: -3.5px;
-  top: 200px;
+  top: 145px;
   background: #fff;
   border-radius: 0px 5px 5px 0px;
-  border: 1px solid #5f5f5f;
-  border-left: 1px solid #000;
-  box-shadow: inset 0px 3px 2px 0px #333, inset 0px -3px 2px 0px #333;
+  /* border: 1px solid #5f5f5f; */
+  /* border-left: 1px solid #000; */
+  box-shadow: inset 0px 3px 2px 0px #666, inset 0px -3px 2px 0px #666;
+
+  ::before {
+    content: "";
+    position: absolute;
+    background: #fffcfc;
+    /* border-left: 2px solid #bcc4cc; */
+    border-radius: 8px 4px 4px 8px / 20px 4px 4px 20px;
+    box-shadow: inset 2px 0px 4px 0px #2b2b2b, inset -6px 0px 3px 0px #a6a6a6,
+      inset 0px -5px 10px 0px #969696, inset 0px 5px 10px 0px #969696;
+    height: 45px;
+    position: absolute;
+    right: -7px;
+    top: -80px;
+    width: 17px;
+    z-index: 9;
+  }
 `;
 
 class AppleWatch extends Component {
