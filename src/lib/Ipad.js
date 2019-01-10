@@ -7,7 +7,7 @@ const Case = styled.div`
   height: 620px;
   background: #0e0e0e;
   padding: 23px;
-  border-radius: 40px 40px 15px 15px / 40px 40px 35px 35px;
+  border-radius: 40px;
   box-shadow: inset 0px 0px 0px 3px #8d8d8f, inset 0px 0px 0px 6px #202022;
   position: relative;
   transform: scale(1);
@@ -26,11 +26,12 @@ const Case = styled.div`
 `;
 
 const Screen = styled.div`
-  background: url("");
+  background: url("https://cdn.wccftech.com/wp-content/uploads/2018/07/iPad-Pro-5K-wallpaper-gallery-1-1109x1480.jpg");
   width: 100%;
   height: 100%;
   position: relative;
   background-size: cover;
+  border-radius: 15px;
 `;
 
 class IpadPro extends Component {
