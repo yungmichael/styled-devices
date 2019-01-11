@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import IphoneX from "./lib/IphoneX";
 import Macbook from "./lib/MacbookPro";
-import IpadPro from "./lib/Ipad";
+import IpadPro from "./lib/IpadPro";
 import AppleWatch from "./lib/AppleWatch";
 
 const Grid = styled.div`
