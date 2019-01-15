@@ -21,7 +21,7 @@ class App extends Component {
           <AppleWatch />
         </Grid>
         <Grid>
-          <IphoneX />
+          <IphoneX sizes={[0.5, 0.6, 0.7]} />
         </Grid>
         <Grid>
           <IpadPro />

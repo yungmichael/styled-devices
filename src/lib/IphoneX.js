@@ -1,6 +1,26 @@
 import React, { Component } from "react";
 
 import styled from "styled-components";
+import { css } from "styled-components";
+
+const sizes = {
+  xs: 480,
+  sm: 736,
+  md: 980,
+  lg: 1280,
+  xl: 1690
+};
+
+// Iterate through the sizes and create a media template
+const media = Object.keys(sizes).reduce((acc, label) => {
+  acc[label] = (...args) => css`
+    @media (max-width: ${sizes[label]}px) {
+      ${css(...args)}
+    }
+  `;
+
+  return acc;
+}, {});
 
 const Case = styled.div`
   width: 380px;
@@ -17,7 +37,27 @@ const Case = styled.div`
     inset -10px 0px 3px 9px #585858, inset -20px 0px 13px 11px #0f0f0f,
     inset 20px 0px 7px 11px #0f0f0f, inset 0px 0px 0px 19px #636363;
   position: relative;
-  transform: scale(0.7);
+
+  ${media.xs` transform: scale(${props =>
+    props.sizes[0] || props.sizes[props.sizes.length - 1]})
+    ${props => (props.landscape ? "rotate(-90deg)" : null)};`}
+
+  ${media.sm` transform: scale(${props =>
+    props.sizes[1] || props.sizes[props.sizes.length - 1]})
+    ${props => (props.landscape ? "rotate(-90deg)" : null)};`}
+
+  ${media.md` transform: scale(${props =>
+    props.sizes[2] || props.sizes[props.sizes.length - 1]})
+    ${props => (props.landscape ? "rotate(-90deg)" : null)};`}
+
+  ${media.lg` transform: scale(${props =>
+    props.sizes[3] || props.sizes[props.sizes.length - 1]})
+    ${props => (props.landscape ? "rotate(-90deg)" : null)};`}
+
+  ${media.xl` transform: scale(${props =>
+    props.sizes[4] || props.sizes[props.sizes.length - 1]})
+    ${props => (props.landscape ? "rotate(-90deg)" : null)};`}
+
 `;
 
 const Screen = styled.div`
@@ -129,7 +169,10 @@ const PowerBtn = styled.div`
 class IphoneX extends Component {
   render() {
     return (
-      <Case>
+      <Case
+        landscape={this.props.landscape || null}
+        sizes={this.props.sizes || [0.5, 0.6, 0.7, 0.9, 1]}
+      >
         <Screen>
           <Notch />
         </Screen>
