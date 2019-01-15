@@ -1,5 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import AppleWatch from "./lib/AppleWatch";
+import IpadPro from "./lib/IpadPro";
+import IphoneX from "./lib/IphoneX";
+import MacbookPro from "./lib/MacbookPro";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+export { AppleWatch, IpadPro, IphoneX, MacbookPro };
