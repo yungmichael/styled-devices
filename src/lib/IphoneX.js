@@ -21,7 +21,7 @@ const Case = styled.div`
 `;
 
 const Screen = styled.div`
-  background: url("http://cdn.osxdaily.com/wp-content/uploads/2017/11/iphone-x-screenshot.jpg");
+  background: url("");
   height: 820px;
   width: 380px;
   border-radius: 35px;

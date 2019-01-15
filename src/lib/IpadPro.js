@@ -15,7 +15,7 @@ const Case = styled.div`
 `;
 
 const Screen = styled.div`
-  background: url("https://cdn.wccftech.com/wp-content/uploads/2018/07/iPad-Pro-5K-wallpaper-gallery-1-1109x1480.jpg");
+  background: url("");
   width: 100%;
   height: 100%;
   position: relative;

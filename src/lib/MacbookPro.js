@@ -46,7 +46,7 @@ const Case = styled.div`
 `;
 
 const Screen = styled.div`
-  background: url("https://wallpaper-house.com/data/out/10/wallpaper2you_416137.jpg");
+  background: url("");
   width: 100%;
   height: 100%;
   position: relative;

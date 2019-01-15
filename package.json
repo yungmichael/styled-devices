@@ -1,26 +1,66 @@
 {
   "name": "styled-devices",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "A styled-components version of some of the most popular devices out there",
-  "license": "MIT",
-  "repository": "vinicius-gr/styled-devices",
-  "main": "index.js",
-  "keywords": [
-    "styled-devices",
-    "npm",
-    "apple",
-    "iphone"
-  ],
-  "dependencies": {
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
-    "react-scripts": "2.1.1",
-    "styled-components": "^4.1.1"
+  "main": "dist/index.js",
+  "directories": {
+    "example": "examples"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --mode development",
+    "transpile": "babel src -d dist --copy-files",
+    "prepublishOnly": "npm run transpile",
+    "build": "webpack --mode production",
+    "deploy": "gh-pages -d examples/dist",
+    "publish-demo": "npm run build && npm run deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinicius-gr/styled-devices.git"
+  },
+  "keywords": [
+    "styled-devices",
+    "react",
+    "react-devices",
+    "apple",
+    "iphone",
+    "watch",
+    "macbook",
+    "ipad",
+    "css-devices"
+  ],
+  "author": "Vinicius Gonzaga Rocha",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vinicius-gr/styled-devices/issues"
+  },
+  "homepage": "https://github.com/vinicius-gr/styled-devices#readme",
+  "peerDependencies": {
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0",
+    "styled-components": "^4.1.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^2.1.0",
+    "gh-pages": "^2.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "style-loader": "^0.23.1",
+    "styled-components": "^4.1.3",
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14"
+  },
+  "dependencies": {
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0",
+    "styled-components": "^4.1.3"
   }
 }
