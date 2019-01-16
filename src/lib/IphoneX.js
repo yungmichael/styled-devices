@@ -11,10 +11,9 @@ const sizes = {
   xl: 1690
 };
 
-// Iterate through the sizes and create a media template
 const media = Object.keys(sizes).reduce((acc, label) => {
   acc[label] = (...args) => css`
-    @media (max-width: ${sizes[label]}px) {
+    @media only screen and (max-width: ${sizes[label]}px) {
       ${css(...args)}
     }
   `;
@@ -38,26 +37,35 @@ const Case = styled.div`
     inset 20px 0px 7px 11px #0f0f0f, inset 0px 0px 0px 19px #636363;
   position: relative;
 
-  ${media.xs` transform: scale(${props =>
-    props.sizes[0] || props.sizes[props.sizes.length - 1]})
+  ${media.xl` transform: ${props =>
+    props.sizes[0]
+      ? "scale(" + props.sizes[0] + ")"
+      : "scale(" + props.sizes[props.sizes.length - 1] + ")"}
     ${props => (props.landscape ? "rotate(-90deg)" : null)};`}
 
-  ${media.sm` transform: scale(${props =>
-    props.sizes[1] || props.sizes[props.sizes.length - 1]})
+  ${media.lg` transform: ${props =>
+    props.sizes[1]
+      ? "scale(" + props.sizes[1] + ")"
+      : "scale(" + props.sizes[props.sizes.length - 1] + ")"}
     ${props => (props.landscape ? "rotate(-90deg)" : null)};`}
 
-  ${media.md` transform: scale(${props =>
-    props.sizes[2] || props.sizes[props.sizes.length - 1]})
+  ${media.md` transform: ${props =>
+    props.sizes[2]
+      ? "scale(" + props.sizes[2] + ")"
+      : "scale(" + props.sizes[props.sizes.length - 1] + ")"}
     ${props => (props.landscape ? "rotate(-90deg)" : null)};`}
 
-  ${media.lg` transform: scale(${props =>
-    props.sizes[3] || props.sizes[props.sizes.length - 1]})
+  ${media.sm` transform: ${props =>
+    props.sizes[3]
+      ? "scale(" + props.sizes[3] + ")"
+      : "scale(" + props.sizes[props.sizes.length - 1] + ")"}
     ${props => (props.landscape ? "rotate(-90deg)" : null)};`}
 
-  ${media.xl` transform: scale(${props =>
-    props.sizes[4] || props.sizes[props.sizes.length - 1]})
+  ${media.xs` transform: ${props =>
+    props.sizes[4]
+      ? "scale(" + props.sizes[4] + ")"
+      : "scale(" + props.sizes[props.sizes.length - 1] + ")"}
     ${props => (props.landscape ? "rotate(-90deg)" : null)};`}
-
 `;
 
 const Screen = styled.div`
@@ -171,7 +179,7 @@ class IphoneX extends Component {
     return (
       <Case
         landscape={this.props.landscape || null}
-        sizes={this.props.sizes || [0.5, 0.6, 0.7, 0.9, 1]}
+        sizes={this.props.sizes || [1, 0.8, 0.6, 0.5, 0.4]}
       >
         <Screen>
           <Notch />

@@ -18,16 +18,7 @@ class App extends Component {
     return (
       <div>
         <Grid>
-          <AppleWatch />
-        </Grid>
-        <Grid>
-          <IphoneX sizes={[0.5, 0.6, 0.7]} />
-        </Grid>
-        <Grid>
-          <IpadPro />
-        </Grid>
-        <Grid>
-          <MacbookPro />
+          <IphoneX />
         </Grid>
       </div>
     );
