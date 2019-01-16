@@ -37,6 +37,8 @@ const Case = styled.div`
     inset 20px 0px 7px 11px #0f0f0f, inset 0px 0px 0px 19px #636363;
   position: relative;
 
+  transform: ${props => (props.landscape ? "rotate(-90deg)" : null)};
+
   ${media.xl` transform: ${props =>
     props.sizes[0]
       ? "scale(" + props.sizes[0] + ")"
@@ -175,11 +177,16 @@ const PowerBtn = styled.div`
 `;
 
 class IphoneX extends Component {
+  componentWillMount() {
+    let wpp = this.props.background;
+    console.log(wpp);
+  }
+
   render() {
     return (
       <Case
         landscape={this.props.landscape || null}
-        sizes={this.props.sizes || [1, 0.8, 0.6, 0.5, 0.4]}
+        sizes={this.props.sizes || [1, 0.8, 0.6, 0.5, 0.3]}
       >
         <Screen>
           <Notch />

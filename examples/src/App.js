@@ -4,6 +4,8 @@ import styled from "styled-components";
 
 import { AppleWatch, IphoneX, IpadPro, MacbookPro } from "../../src";
 
+import iPhoneWallpaper from "../public/assests/IphoenX.jpg"
+
 const Grid = styled.div`
   height: 100vh;
   width: 100vw;
@@ -18,7 +20,7 @@ class App extends Component {
     return (
       <div>
         <Grid>
-          <IphoneX />
+          <IphoneX landscape background={[iPhoneWallpaper]}/>
         </Grid>
       </div>
     );
