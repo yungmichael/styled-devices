@@ -10,7 +10,7 @@ class App extends Component {
       "https://raw.githubusercontent.com/vinicius-gr/styled-devices/master/examples/public/assests/IphoenX.jpg";
     return (
       <div>
-        <IphoneX background={[wpp1]} />
+        <IphoneX background={[wpp1]} sizes={[0.9, 0.8, 0.5]} />
       </div>
     );
   }

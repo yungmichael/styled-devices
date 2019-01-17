@@ -1,10 +1,8 @@
-import React, { Component } from "react";
+import styled, { css } from "styled-components";
 
-import styled from "styled-components";
+import media from "../../utils/screenSizes";
 
-import media from "./utils/screenSizes";
-
-const Case = styled.div`
+export const CaseStyles = css`
   width: 380px;
   height: 820px;
   background: #000;
@@ -54,7 +52,7 @@ const Case = styled.div`
     ${props => (props.landscape ? "rotate(-90deg)" : null)};`}
 `;
 
-const Screen = styled.div`
+export const ScreenStyles = css`
   background: url(${props => props.background[0] || null});
   height: 820px;
   width: 380px;
@@ -63,7 +61,7 @@ const Screen = styled.div`
   background-size: cover;
 `;
 
-const Notch = styled.div`
+export const Notch = styled.div`
   position: absolute;
   width: 210px;
   height: 30px;
@@ -106,7 +104,7 @@ const Notch = styled.div`
   }
 `;
 
-const VolumeBtns = styled.div`
+export const VolumeBtns = styled.div`
   position: absolute;
   height: 60px;
   width: 3px;
@@ -147,7 +145,7 @@ const VolumeBtns = styled.div`
   }
 `;
 
-const PowerBtn = styled.div`
+export const PowerBtn = styled.div`
   position: absolute;
   height: 100px;
   width: 3px;
@@ -159,27 +157,3 @@ const PowerBtn = styled.div`
   border-left: 1px solid #000;
   box-shadow: inset 0px 3px 2px 0px #333, inset 0px -3px 2px 0px #333;
 `;
-
-class IphoneX extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <Case
-        landscape={this.props.landscape || null}
-        sizes={this.props.sizes || [1, 0.8, 0.6, 0.5, 0.3]}
-      >
-        <Screen background={this.props.background || null}>
-          <Notch />
-        </Screen>
-        <VolumeBtns />
-        <PowerBtn />
-      </Case>
-    );
-  }
-}
-
-export default IphoneX;
