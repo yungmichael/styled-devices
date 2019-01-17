@@ -4,24 +4,13 @@ import styled from "styled-components";
 
 import { AppleWatch, IphoneX, IpadPro, MacbookPro } from "../../src";
 
-import iPhoneWallpaper from "../public/assests/IphoenX.jpg"
-
-const Grid = styled.div`
-  height: 100vh;
-  width: 100vw;
-  background-color: aliceblue;
-  display: grid;
-  align-items: center;
-  justify-content: center;
-`;
-
 class App extends Component {
   render() {
+    let wpp1 =
+      "https://raw.githubusercontent.com/vinicius-gr/styled-devices/master/examples/public/assests/IphoenX.jpg";
     return (
       <div>
-        <Grid>
-          <IphoneX landscape background={[iPhoneWallpaper]}/>
-        </Grid>
+        <IphoneX background={[wpp1]} />
       </div>
     );
   }

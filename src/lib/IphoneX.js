@@ -1,25 +1,8 @@
 import React, { Component } from "react";
 
 import styled from "styled-components";
-import { css } from "styled-components";
 
-const sizes = {
-  xs: 480,
-  sm: 736,
-  md: 980,
-  lg: 1280,
-  xl: 1690
-};
-
-const media = Object.keys(sizes).reduce((acc, label) => {
-  acc[label] = (...args) => css`
-    @media only screen and (max-width: ${sizes[label]}px) {
-      ${css(...args)}
-    }
-  `;
-
-  return acc;
-}, {});
+import media from "./utils/screenSizes";
 
 const Case = styled.div`
   width: 380px;
@@ -36,6 +19,7 @@ const Case = styled.div`
     inset -10px 0px 3px 9px #585858, inset -20px 0px 13px 11px #0f0f0f,
     inset 20px 0px 7px 11px #0f0f0f, inset 0px 0px 0px 19px #636363;
   position: relative;
+  transition: all ease-in-out 0.3s;
 
   transform: ${props => (props.landscape ? "rotate(-90deg)" : null)};
 
@@ -71,7 +55,7 @@ const Case = styled.div`
 `;
 
 const Screen = styled.div`
-  background: url("");
+  background: url(${props => props.background[0] || null});
   height: 820px;
   width: 380px;
   border-radius: 35px;
@@ -177,9 +161,9 @@ const PowerBtn = styled.div`
 `;
 
 class IphoneX extends Component {
-  componentWillMount() {
-    let wpp = this.props.background;
-    console.log(wpp);
+  constructor(props) {
+    super(props);
+    this.state = {};
   }
 
   render() {
@@ -188,7 +172,7 @@ class IphoneX extends Component {
         landscape={this.props.landscape || null}
         sizes={this.props.sizes || [1, 0.8, 0.6, 0.5, 0.3]}
       >
-        <Screen>
+        <Screen background={this.props.background || null}>
           <Notch />
         </Screen>
         <VolumeBtns />
