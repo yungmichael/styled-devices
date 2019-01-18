@@ -53,7 +53,7 @@ export const CaseStyles = css`
 `;
 
 export const ScreenStyles = css`
-  background: url(${props => props.background[0] || null});
+  background: url(${props => props.background || null});
   height: 820px;
   width: 380px;
   border-radius: 35px;
