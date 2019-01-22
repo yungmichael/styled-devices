@@ -2,17 +2,13 @@
 
 > A styled-components version of some of the most popular devices out there
 
-**Badges will go here**
-
 ![](https://img.shields.io/npm/v/styled-devices.svg)
 
 ![](https://img.shields.io/npm/dw/styled-devices.svg)
 
 ---
 
-## Table of Contents (Optional)
-
-> If you're `README` has a lot of info, section headers might be nice.
+## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
@@ -21,7 +17,7 @@
 
 ---
 
-## Example (Optional)
+## Example
 
 ```javascript
 import React, { Component } from "react";
