@@ -22,7 +22,7 @@
 ```javascript
 import React, { Component } from "react";
 
-import { IphoneX } from "../../src";
+import { IphoneX } from "styled-devices";
 
 class App extends Component {
   render() {
