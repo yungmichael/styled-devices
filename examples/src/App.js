@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import { createStore } from "redux";
-import { slideshow } from "../../src/lib/reducers/iphoneReducers";
 
 import { AppleWatch, IphoneX, IpadPro, MacbookPro } from "../../src";
 
@@ -12,7 +10,11 @@ class App extends Component {
 
     return (
       <div>
-        <IphoneX backgrounds={[wpp1, wpp2]} sizes={[0.9, 0.8, 0.5]} />
+        <IphoneX
+          backgrounds={[wpp1, wpp2]}
+          sizes={[0.9, 0.8, 0.5]}
+          delay={10000}
+        />
       </div>
     );
   }

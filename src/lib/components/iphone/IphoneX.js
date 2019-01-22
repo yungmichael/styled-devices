@@ -29,15 +29,17 @@ class IphoneX extends Component {
         bg: this.props.backgrounds[index++]
       });
       if (index === this.props.backgrounds.length) index = 0;
-    }, 3000);
+    }, this.props.delay);
   }
 
   render() {
     return (
       <Case landscape={this.props.landscape} sizes={this.props.sizes}>
-        <Screen background={this.state.bg}>
-          <Notch />
-        </Screen>
+        {this.props.children || (
+          <Screen background={this.state.bg} delay={this.state.delay}>
+            <Notch />
+          </Screen>
+        )}
         <VolumeBtns />
         <PowerBtn />
       </Case>
