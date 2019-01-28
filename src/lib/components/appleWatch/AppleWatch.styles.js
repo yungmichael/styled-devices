@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import styled, { css } from "styled-components";
 
-import styled from "styled-components";
+import media from "../../utils/screenSizes";
 
-const Case = styled.div`
+export const CaseStyles = css`
   width: 210px;
   height: 250px;
   background: #ececec;
@@ -10,9 +10,38 @@ const Case = styled.div`
   padding: 10px;
   box-shadow: inset 0px 0px 3px 3px #b2b2b2;
   position: relative;
+  transition: all ease-in-out 0.3s;
+
+  transform: rotate(0);
+
+
+  ${media.xl` transform: ${props =>
+    props.sizes[0]
+      ? "scale(" + props.sizes[0] + ")"
+      : "scale(" + props.sizes[props.sizes.length - 1] + ")"}`}
+
+  ${media.lg` transform: ${props =>
+    props.sizes[1]
+      ? "scale(" + props.sizes[1] + ")"
+      : "scale(" + props.sizes[props.sizes.length - 1] + ")"}`}
+
+  ${media.md` transform: ${props =>
+    props.sizes[2]
+      ? "scale(" + props.sizes[2] + ")"
+      : "scale(" + props.sizes[props.sizes.length - 1] + ")"}`}
+
+  ${media.sm` transform: ${props =>
+    props.sizes[3]
+      ? "scale(" + props.sizes[3] + ")"
+      : "scale(" + props.sizes[props.sizes.length - 1] + ")"}`}
+
+  ${media.xs` transform: ${props =>
+    props.sizes[4]
+      ? "scale(" + props.sizes[4] + ")"
+      : "scale(" + props.sizes[props.sizes.length - 1] + ")"}`}
 `;
 
-const Screen = styled.div`
+export const Screen = styled.div`
   height: 100%;
   width: 100%;
   background: #060606;
@@ -37,7 +66,7 @@ const Screen = styled.div`
   }
 `;
 
-const Buttons = styled.div`
+export const Buttons = styled.div`
   position: absolute;
   height: 70px;
   width: 5px;
@@ -62,16 +91,3 @@ const Buttons = styled.div`
     z-index: 9;
   }
 `;
-
-class AppleWatch extends Component {
-  render() {
-    return (
-      <Case>
-        <Screen />
-        <Buttons />
-      </Case>
-    );
-  }
-}
-
-export default AppleWatch;

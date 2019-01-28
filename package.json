@@ -1,6 +1,6 @@
 {
   "name": "styled-devices",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "A styled-components version of some of the most popular devices out there",
   "main": "dist/index.js",
   "directories": {

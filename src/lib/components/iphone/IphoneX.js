@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 import {
   CaseStyles,
@@ -28,15 +28,17 @@ class IphoneX extends Component {
       this.setState({
         bg: this.props.backgrounds[index++]
       });
-      if (index === this.props.backgrounds.length) index = 0;
+      if (index === this.props.backgrounds.length) 
+        index = 0;
     }, this.props.delay);
   }
 
   render() {
+    const { landscape, sizes, delay } = this.props;
     return (
-      <Case landscape={this.props.landscape} sizes={this.props.sizes}>
+      <Case landscape={landscape} sizes={sizes}>
         {this.props.children || (
-          <Screen background={this.state.bg} delay={this.state.delay}>
+          <Screen background={this.state.bg} delay={delay}>
             <Notch />
           </Screen>
         )}
