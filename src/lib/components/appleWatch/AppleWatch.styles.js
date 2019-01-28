@@ -41,7 +41,7 @@ export const CaseStyles = css`
       : "scale(" + props.sizes[props.sizes.length - 1] + ")"}`}
 `;
 
-export const Screen = styled.div`
+export const ScreenStyles = css`
   height: 100%;
   width: 100%;
   background: #060606;
@@ -49,6 +49,21 @@ export const Screen = styled.div`
   box-shadow: inset 0px 0px 0px 1px #333, inset 54px 0px 40px -40px #737373,
     inset -5px -5px 5px -1px #9a9a9a;
   position: relative;
+
+  ::after {
+    content: "";
+    position: absolute;
+    background: url(${props => props.background || null});
+    background-color: #060606;
+    height: 195px;
+    width: 155px;
+    top: 50%;
+    left: 50%;
+    z-index: 0;
+    transform: translate(-50%, -50%);
+    background-size: cover;
+    border-radius: 3px;
+  }
 
   ::before {
     content: "";
