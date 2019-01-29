@@ -1,20 +1,37 @@
 import React, { Component } from "react";
+import styled from "styled-components";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
-import { AppleWatch, IphoneX, IpadPro, MacbookPro } from "../../src";
+import LeftArrow from "./components/slideshow/leftArrow";
+import RigthArrow from "./components/slideshow/RigthArrow";
+
+import Navbar from "./components/navbar/index";
+
+library.add(faAngleLeft);
+library.add(faAngleRight);
+
+const Container = styled.div`
+  background: #e0f1ff;
+  font-family: sans-serif;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 8vh 92vh;
+  position: relative;
+`;
+
+import Slide from "./components/slideshow/Slide";
 
 class App extends Component {
   render() {
-    let wpp1 = "https://i.imgur.com/7sy5OIT.jpg";
-    let wpp2 = "https://i.imgur.com/uIN6Wxe.jpg";
-
     return (
-      <div>
-        <AppleWatch
-          backgrounds={[wpp1, wpp2]}
-          sizes={[1.0, 0.9, 0.8, 0.5]}
-          delay={5000}
-        />
-      </div>
+      <Container>
+        <Navbar />
+        <LeftArrow />
+        <Slide />
+        <RigthArrow />
+      </Container>
     );
   }
 }
