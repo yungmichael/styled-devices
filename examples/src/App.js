@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import { connect } from "react-redux";
 
 import LeftArrow from "./components/slideshow/leftArrow";
 import RigthArrow from "./components/slideshow/RigthArrow";
@@ -13,11 +13,12 @@ library.add(faAngleLeft);
 library.add(faAngleRight);
 
 const Container = styled.div`
-  background: #e0f1ff;
-  font-family: sans-serif;
+  background: #f5f6f9;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
   height: 100vh;
   display: grid;
-  grid-template-rows: 8vh 92vh;
+  grid-template-rows: 60px 1fr;
   position: relative;
 `;
 

@@ -5,30 +5,28 @@ import styled from "styled-components";
 const Container = styled.nav`
   height: 60px;
   width: 100%;
-  background: #e0f1ff;
+  background: #5163ba;
   top: 0;
   text-align: center;
+  font-size: 14px;
 `;
 
 const LinkContainer = styled.div`
-  padding: 10px;
-  border: 2px solid #82bfdd;
-  color: #82bfdd;
-  font-weight: bold;
-  border-radius: 5px;
-  margin: 10px;
-  display: inline;
-  transform: translateY(-50%);
-  top: 50%;
+  color: #fff;
+  display: inline-block;
   position: relative;
   cursor: pointer;
+  height: 100%;
+  justify-content: center;
+  width: 100px;
 `;
 
 const Link = styled.a`
-  height: 60px;
-  width: 100%;
-  background: aliceblue;
-  top: 0;
+  top: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  font-weight: 600;
+  left: 50%;
 `;
 
 class Navbar extends Component {
@@ -36,10 +34,10 @@ class Navbar extends Component {
     return (
       <Container>
         <LinkContainer>
-          <a>Devices</a>
+          <Link>Devices</Link>
         </LinkContainer>
         <LinkContainer>
-          <a>Contact</a>
+          <Link>Contact</Link>
         </LinkContainer>
       </Container>
     );

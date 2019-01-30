@@ -1,35 +1,49 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import styled from "styled-components";
 
+import { nextDevice } from "../../actions";
+
 const Circle = styled.div`
-  height: 60px;
-  width: 60px;
-  background: #82bfdd;
+  height: 40px;
+  width: 40px;
+  background: #5163ba;
   border-radius: 50%;
   position: absolute;
   right: 5%;
   top: 50%;
   transform: translateY(-50%);
   color: #fff;
-  font-size: 60px;
+  font-size: 35px;
   display: grid;
   align-items: center;
   cursor: pointer;
 
   > svg {
-    margin-left: 20px;
+    margin-left: 13px;
+    color: #fff;
   }
 `;
 
-export default class RightArrow extends Component {
+class RightArrow extends Component {
   render() {
+    const { nextDevice } = this.props;
     return (
-      <Circle>
+      <Circle onClick={() => nextDevice()}>
         <FontAwesomeIcon icon="angle-right" />
       </Circle>
     );
   }
 }
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({ nextDevice }, dispatch);
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(RightArrow);

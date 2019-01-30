@@ -19,7 +19,8 @@ export const CaseStyles = css`
   position: relative;
   transition: all ease-in-out 0.3s;
 
-  transform: ${props => (props.landscape ? "rotate(-90deg)" : null)};
+  transform: scale(0.8) ${props =>
+    props.landscape ? "rotate(-90deg)" : null};
 
   ${media.xl` transform: ${props =>
     props.sizes[0]
