@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import {
+  faAngleLeft,
+  faAngleRight,
+  faPlus
+} from "@fortawesome/free-solid-svg-icons";
 import { connect } from "react-redux";
 
 import LeftArrow from "./components/slideshow/leftArrow";
@@ -11,6 +15,7 @@ import Navbar from "./components/navbar/index";
 
 library.add(faAngleLeft);
 library.add(faAngleRight);
+library.add(faPlus);
 
 const Container = styled.div`
   background: #f5f6f9;

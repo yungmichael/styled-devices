@@ -1,4 +1,8 @@
-import { NEXT_DEVICE, PREV_DEVICE } from "../actions/actionTypes";
+import {
+  NEXT_DEVICE,
+  PREV_DEVICE,
+  ADD_BACKGROUND
+} from "../actions/actionTypes";
 
 export const nextDevice = () => ({
   type: NEXT_DEVICE
@@ -6,4 +10,8 @@ export const nextDevice = () => ({
 
 export const prevDevice = () => ({
   type: PREV_DEVICE
+});
+
+export const addBg = () => ({
+  type: ADD_BACKGROUND
 });
