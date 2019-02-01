@@ -71,7 +71,6 @@ const Hint = styled.div`
   color: ${theme.text_color_secondary};
   margin-top: 5px;
   animation: ${fadeIn} 0.5s ease-in 1;
-  }
 `;
 
 class Editor extends Component {
