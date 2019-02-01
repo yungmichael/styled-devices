@@ -9,6 +9,8 @@ import { bindActionCreators } from "redux";
 
 import { addBg } from "../../actions";
 
+import { fadeIn } from "../../utils/keyframes";
+
 const Container = styled.div`
   display: grid;
   grid-template-columns: 3fr 2fr;
@@ -64,10 +66,37 @@ const BackgorundsListItem = styled.input`
   }
 `;
 
+const Hint = styled.div`
+  font-size: 12px;
+  color: ${theme.text_color_secondary};
+  margin-top: 5px;
+  animation: ${fadeIn} 0.5s ease-in 1;
+  }
+`;
+
 class Editor extends Component {
   /* static propTypes = {
     prop: PropTypes
   } */
+  constructor(props) {
+    super(props);
+    this.state = {
+      hint: null
+    };
+  }
+
+  verifyAndAddBg() {
+    const { backgrounds, addBg } = this.props;
+    if (backgrounds.iphoneX.filter(val => val == "").length > 0) {
+      this.setState({
+        hint: "You already have a blank background"
+      });
+      return false;
+    } else {
+      addBg();
+      return true;
+    }
+  }
 
   render() {
     const { backgrounds, addBg } = this.props;
@@ -77,12 +106,15 @@ class Editor extends Component {
         <BackgorundsListContainer>
           <BackgorundsListHeader>
             Backgrounds
-            <AddOne onClick={() => addBg()}>Add background</AddOne>
+            <AddOne onClick={() => this.verifyAndAddBg()}>
+              Add background
+            </AddOne>
           </BackgorundsListHeader>
           <BackgorundsList>
             {backgrounds.iphoneX.map((val, index) => {
               return <BackgorundsListItem key={index} value={val} />;
             })}
+            {this.state.hint ? <Hint>{this.state.hint}</Hint> : null}
           </BackgorundsList>
         </BackgorundsListContainer>
       </Container>

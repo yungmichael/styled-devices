@@ -23,9 +23,9 @@ class Slide extends Component {
     if (count == 0) {
       return (
         <IphoneX
-          backgrounds={[backgrounds.iphoneX[0], backgrounds.iphoneX[1]]}
+          backgrounds={backgrounds.iphoneX}
           sizes={[0.8, 0.7, 0.5]}
-          delay={5000}
+          delay={1000}
         />
       );
     }
