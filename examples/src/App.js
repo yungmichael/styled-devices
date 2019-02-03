@@ -4,7 +4,9 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faAngleLeft,
   faAngleRight,
-  faPlus
+  faPlus,
+  faTrash,
+  faTimes
 } from "@fortawesome/free-solid-svg-icons";
 import { connect } from "react-redux";
 
@@ -16,6 +18,8 @@ import Navbar from "./components/navbar/index";
 library.add(faAngleLeft);
 library.add(faAngleRight);
 library.add(faPlus);
+library.add(faTrash);
+library.add(faTimes);
 
 const Container = styled.div`
   background: #f5f6f9;

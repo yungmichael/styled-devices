@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { connect } from "react-redux";
 
 import { theme } from "../../utils/theme";
@@ -10,6 +9,8 @@ import { bindActionCreators } from "redux";
 import { addBg } from "../../actions";
 
 import { fadeIn } from "../../utils/keyframes";
+
+import BackgorundsListItem from "./Editor/BackgroundListItem";
 
 const Container = styled.div`
   display: grid;
@@ -52,20 +53,6 @@ const BackgorundsList = styled.ul`
   }
 `;
 
-const BackgorundsListItem = styled.input`
-  width: 100%;
-  padding: 8px 16px;
-  background: ${theme.color_white};
-  list-style: none;
-  font-size: 14px;
-  border: 1px solid ${theme.text_color_grey};
-  border-top: none;
-
-  :focus {
-    outline: none;
-  }
-`;
-
 const Hint = styled.div`
   font-size: 12px;
   color: ${theme.text_color_secondary};
@@ -79,9 +66,7 @@ class Editor extends Component {
   } */
   constructor(props) {
     super(props);
-    this.state = {
-      hint: null
-    };
+    this.state = {};
   }
 
   verifyAndAddBg() {
@@ -97,8 +82,12 @@ class Editor extends Component {
     }
   }
 
+  showTrash(i) {
+    console.log(i);
+  }
+
   render() {
-    const { backgrounds, addBg } = this.props;
+    const { backgrounds } = this.props;
 
     return (
       <Container>
@@ -111,7 +100,7 @@ class Editor extends Component {
           </BackgorundsListHeader>
           <BackgorundsList>
             {backgrounds.iphoneX.map((val, index) => {
-              return <BackgorundsListItem key={index} value={val} />;
+              return <BackgorundsListItem value={val} key={index} />;
             })}
             {this.state.hint ? <Hint>{this.state.hint}</Hint> : null}
           </BackgorundsList>

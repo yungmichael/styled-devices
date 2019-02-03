@@ -20,28 +20,24 @@ export const slideReducer = (state = initialState, action) => {
     case NEXT_DEVICE:
       if (state.currentDevice == state.devices.length - 1) {
         return {
-          devices: state.devices,
-          backgrounds: state.backgrounds,
+          ...state,
           currentDevice: 0
         };
       }
       return {
-        devices: state.devices,
-        backgrounds: state.backgrounds,
+        ...state,
         currentDevice: state.currentDevice + 1
       };
 
     case PREV_DEVICE:
       if (state.currentDevice == 0) {
         return {
-          devices: state.devices,
-          backgrounds: state.backgrounds,
+          ...state,
           currentDevice: state.devices.length - 1
         };
       } else {
         return {
-          devices: state.devices,
-          backgrounds: state.backgrounds,
+          ...state,
           currentDevice: state.currentDevice - 1
         };
       }
@@ -51,8 +47,7 @@ export const slideReducer = (state = initialState, action) => {
       newIphone.push("");
 
       return {
-        devices: state.devices,
-        currentDevice: state.currentDevice,
+        ...state,
         backgrounds: {
           iphoneX: newIphone
         }
