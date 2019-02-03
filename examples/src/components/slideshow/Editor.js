@@ -82,9 +82,6 @@ class Editor extends Component {
     }
   }
 
-  showTrash(i) {
-    console.log(i);
-  }
 
   render() {
     const { backgrounds } = this.props;
@@ -100,7 +97,12 @@ class Editor extends Component {
           </BackgorundsListHeader>
           <BackgorundsList>
             {backgrounds.iphoneX.map((val, index) => {
-              return <BackgorundsListItem value={val} key={index} />;
+              return (
+                <BackgorundsListItem
+                  index={index}
+                  key={index}
+                />
+              );
             })}
             {this.state.hint ? <Hint>{this.state.hint}</Hint> : null}
           </BackgorundsList>
@@ -114,7 +116,8 @@ const mapStateToProps = store => ({
   backgrounds: store.slideState.backgrounds
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators({ addBg }, dispatch);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({ addBg }, dispatch);
 
 export default connect(
   mapStateToProps,

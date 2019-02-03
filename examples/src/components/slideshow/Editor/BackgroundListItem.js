@@ -1,9 +1,13 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
 import styled from "styled-components";
 import { theme } from "../../../utils/theme";
 import { fadeIn } from "../../../utils/keyframes";
+
+import { deleteBg } from "../../../actions";
 
 const Container = styled.div`
   position: relative;
@@ -34,7 +38,7 @@ const ClearIcon = styled.div`
   top: 50%;
   transform: translateY(-50%);
   animation: ${fadeIn} 0.3s ease-in-out 1;
-  color: ${theme.text_color_secondary};
+  color: ${props => (props.state ? theme.text_color_secondary : "transparent")};
   opacity: ${props => (props.state ? "1" : "0")};
   cursor: pointer;
 `;
@@ -46,18 +50,18 @@ const TrashIcon = styled.div`
   top: 50%;
   transform: translateY(-50%);
   animation: ${fadeIn} 0.3s ease-in-out 1;
-  color: ${theme.text_color_secondary};
+  color: ${props => (props.state ? theme.text_color_secondary : "transparent")};
   opacity: ${props => (props.state ? "1" : "0")};
   cursor: pointer;
 `;
 
-export default class BackgorundsListItem extends Component {
+class BackgorundsListItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
       clear: false,
       trash: false,
-      value: props.value
+      value: this.props.backgrounds[props.index]
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -87,13 +91,20 @@ export default class BackgorundsListItem extends Component {
     this.setState({ ...this.state, value: "" });
   }
 
+  handleDelete(i) {
+    const { deleteBg } = this.props;
+    deleteBg(i);
+  }
+
   render() {
+    const { backgrounds } = this.props;
+
     return (
       <Container>
         <InputBackground
           onFocus={() => this.activateIcons()}
           onBlur={() => this.desactivateIcons()}
-          value={this.state.value}
+          value={backgrounds[this.props.index]}
           onChange={e => this.handleChange(e)}
         />
 
@@ -101,10 +112,25 @@ export default class BackgorundsListItem extends Component {
           <FontAwesomeIcon icon="times" />
         </ClearIcon>
 
-        <TrashIcon state={this.state.clear} onClick={() => this.handleClear()}>
+        <TrashIcon
+          state={this.state.clear}
+          onClick={this.handleDelete.bind(this, this.props.index)}
+        >
           <FontAwesomeIcon icon="trash" />
         </TrashIcon>
       </Container>
     );
   }
 }
+
+const mapStateToProps = store => ({
+  backgrounds: store.slideState.backgrounds.iphoneX
+});
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({ deleteBg }, dispatch);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(BackgorundsListItem);

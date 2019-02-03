@@ -8,7 +8,6 @@ import {
   faTrash,
   faTimes
 } from "@fortawesome/free-solid-svg-icons";
-import { connect } from "react-redux";
 
 import LeftArrow from "./components/slideshow/leftArrow";
 import RigthArrow from "./components/slideshow/RigthArrow";

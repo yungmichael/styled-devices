@@ -42,7 +42,7 @@ class Slide extends Component {
   }
 
   render() {
-    const { currentDevice, devices } = this.props;
+    const { currentDevice } = this.props;
 
     return (
       <DeviceSlideshow>
