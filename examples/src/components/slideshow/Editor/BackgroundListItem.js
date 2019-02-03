@@ -35,7 +35,7 @@ const ClearIcon = styled.div`
   transform: translateY(-50%);
   animation: ${fadeIn} 0.3s ease-in-out 1;
   color: ${theme.text_color_secondary};
-
+  opacity: ${props => (props.state ? "1" : "0")};
   cursor: pointer;
 `;
 
@@ -47,6 +47,7 @@ const TrashIcon = styled.div`
   transform: translateY(-50%);
   animation: ${fadeIn} 0.3s ease-in-out 1;
   color: ${theme.text_color_secondary};
+  opacity: ${props => (props.state ? "1" : "0")};
   cursor: pointer;
 `;
 
@@ -58,6 +59,8 @@ export default class BackgorundsListItem extends Component {
       trash: false,
       value: props.value
     };
+
+    this.handleChange = this.handleChange.bind(this);
   }
 
   desactivateIcons() {
@@ -76,6 +79,14 @@ export default class BackgorundsListItem extends Component {
     });
   }
 
+  handleChange(event) {
+    this.setState({ ...this.state, value: event.target.value });
+  }
+
+  handleClear() {
+    this.setState({ ...this.state, value: "" });
+  }
+
   render() {
     return (
       <Container>
@@ -83,17 +94,16 @@ export default class BackgorundsListItem extends Component {
           onFocus={() => this.activateIcons()}
           onBlur={() => this.desactivateIcons()}
           value={this.state.value}
+          onChange={e => this.handleChange(e)}
         />
-        {this.state.clear ? (
-          <ClearIcon>
-            <FontAwesomeIcon icon="times" />
-          </ClearIcon>
-        ) : null}
-        {this.state.trash ? (
-          <TrashIcon>
-            <FontAwesomeIcon icon="trash" />
-          </TrashIcon>
-        ) : null}
+
+        <ClearIcon state={this.state.clear} onClick={() => this.handleClear()}>
+          <FontAwesomeIcon icon="times" />
+        </ClearIcon>
+
+        <TrashIcon state={this.state.clear} onClick={() => this.handleClear()}>
+          <FontAwesomeIcon icon="trash" />
+        </TrashIcon>
       </Container>
     );
   }
