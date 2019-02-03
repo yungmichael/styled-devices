@@ -7,12 +7,16 @@ import styled from "styled-components";
 import { theme } from "../../../utils/theme";
 import { fadeIn } from "../../../utils/keyframes";
 
-import { deleteBg } from "../../../actions";
+import { deleteBg, changeBg } from "../../../actions";
 
 const Container = styled.div`
   position: relative;
   width: 100%;
   height: 34px;
+
+  input:first-child {
+    border-top: 1px solid ${theme.text_color_grey};
+  }
 `;
 
 const InputBackground = styled.input`
@@ -73,6 +77,10 @@ class BackgorundsListItem extends Component {
       clear: false,
       trash: false
     });
+
+    const { changeBg, index } = this.props;
+
+    changeBg(this.state.value, index);
   }
 
   activateIcons() {
@@ -88,7 +96,9 @@ class BackgorundsListItem extends Component {
   }
 
   handleClear() {
-    this.setState({ ...this.state, value: "" });
+    const { changeBg, index } = this.props;
+    this.setState({ ...this.state, value: " " });
+    changeBg(this.state.value, index);
   }
 
   handleDelete(i) {
@@ -97,14 +107,14 @@ class BackgorundsListItem extends Component {
   }
 
   render() {
-    const { backgrounds } = this.props;
+    const { backgrounds, index } = this.props;
 
     return (
       <Container>
         <InputBackground
           onFocus={() => this.activateIcons()}
           onBlur={() => this.desactivateIcons()}
-          value={backgrounds[this.props.index]}
+          value={this.state.value}
           onChange={e => this.handleChange(e)}
         />
 
@@ -114,7 +124,7 @@ class BackgorundsListItem extends Component {
 
         <TrashIcon
           state={this.state.clear}
-          onClick={this.handleDelete.bind(this, this.props.index)}
+          onClick={this.handleDelete.bind(this, index)}
         >
           <FontAwesomeIcon icon="trash" />
         </TrashIcon>
@@ -128,7 +138,7 @@ const mapStateToProps = store => ({
 });
 
 const mapDispatchToProps = dispatch =>
-  bindActionCreators({ deleteBg }, dispatch);
+  bindActionCreators({ deleteBg, changeBg }, dispatch);
 
 export default connect(
   mapStateToProps,

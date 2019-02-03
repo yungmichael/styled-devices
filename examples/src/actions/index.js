@@ -2,7 +2,8 @@ import {
   NEXT_DEVICE,
   PREV_DEVICE,
   ADD_BACKGROUND,
-  DELETE_BACKGROUND
+  DELETE_BACKGROUND,
+  CHANGE_BACKGROUND
 } from "../actions/actionTypes";
 
 export const nextDevice = () => ({
@@ -19,5 +20,11 @@ export const addBg = () => ({
 
 export const deleteBg = i => ({
   type: DELETE_BACKGROUND,
+  index: i
+});
+
+export const changeBg = (val, i) => ({
+  type: CHANGE_BACKGROUND,
+  value: val,
   index: i
 });

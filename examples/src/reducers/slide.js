@@ -2,7 +2,8 @@ import {
   NEXT_DEVICE,
   PREV_DEVICE,
   ADD_BACKGROUND,
-  DELETE_BACKGROUND
+  DELETE_BACKGROUND,
+  CHANGE_BACKGROUND
 } from "../actions/actionTypes";
 
 const initialState = {
@@ -62,6 +63,18 @@ export const slideReducer = (state = initialState, action = {}) => {
           iphoneX: [...state.backgrounds.iphoneX].filter(
             (val, index) => index !== action.index
           )
+        }
+      };
+
+    case CHANGE_BACKGROUND:
+      newIphone = state.backgrounds.iphoneX;
+      newIphone[action.index] = action.value;
+
+      return {
+        ...state,
+        backgrounds: {
+          ...state.backgrounds,
+          iphoneX: newIphone
         }
       };
 

@@ -48,9 +48,6 @@ const BackgorundsList = styled.ul`
   padding: 0px;
   list-style: none;
 
-  input:first-child {
-    border-top: 1px solid ${theme.text_color_grey};
-  }
 `;
 
 const Hint = styled.div`
@@ -71,7 +68,7 @@ class Editor extends Component {
 
   verifyAndAddBg() {
     const { backgrounds, addBg } = this.props;
-    if (backgrounds.iphoneX.filter(val => val == "").length > 0) {
+    if (backgrounds.iphoneX.filter(val => val == " ").length > 0) {
       this.setState({
         hint: "You already have a blank background"
       });
