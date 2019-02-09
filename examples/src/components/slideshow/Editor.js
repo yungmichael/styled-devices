@@ -14,6 +14,7 @@ import BackgorundsListItem from "./Editor/BackgroundListItem";
 import Orientation from "./Editor/Orientation";
 import Delay from "./Editor/Delay";
 import Sizes from "./Editor/Sizes";
+import media from "../../utils/screenSizes";
 
 const Container = styled.div`
   display: grid;
@@ -21,6 +22,8 @@ const Container = styled.div`
   width: 95%;
   height: 60%;
   grid-gap: 50px;
+
+  ${media.xl`display: none;`}
 `;
 
 const BackgorundsListContainer = styled.div`
