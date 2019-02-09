@@ -53,15 +53,6 @@ export const CaseStyles = css`
     ${props => (props.landscape ? "rotate(-90deg)" : null)};`}
 `;
 
-export const ScreenStyles = css`
-  background: url(${props => props.background || null});
-  height: 820px;
-  width: 380px;
-  border-radius: 35px;
-  position: relative;
-  background-size: cover;
-`;
-
 export const Notch = styled.div`
   position: absolute;
   width: 210px;

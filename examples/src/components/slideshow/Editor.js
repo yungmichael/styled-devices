@@ -11,12 +11,16 @@ import { addBg } from "../../actions";
 import { fadeIn } from "../../utils/keyframes";
 
 import BackgorundsListItem from "./Editor/BackgroundListItem";
+import Orientation from "./Editor/Orientation";
+import Delay from "./Editor/Delay";
+import Sizes from "./Editor/Sizes";
 
 const Container = styled.div`
   display: grid;
   grid-template-columns: 3fr 2fr;
   width: 95%;
   height: 60%;
+  grid-gap: 50px;
 `;
 
 const BackgorundsListContainer = styled.div`
@@ -47,7 +51,6 @@ const AddOne = styled.div`
 const BackgorundsList = styled.ul`
   padding: 0px;
   list-style: none;
-
 `;
 
 const Hint = styled.div`
@@ -55,6 +58,11 @@ const Hint = styled.div`
   color: ${theme.text_color_secondary};
   margin-top: 5px;
   animation: ${fadeIn} 0.5s ease-in 1;
+`;
+
+const SecondColumn = styled.div`
+  display: grid;
+  grid-template-rows: 1fr 1fr 2fr;
 `;
 
 class Editor extends Component {
@@ -79,7 +87,6 @@ class Editor extends Component {
     }
   }
 
-
   render() {
     const { backgrounds } = this.props;
 
@@ -94,16 +101,16 @@ class Editor extends Component {
           </BackgorundsListHeader>
           <BackgorundsList>
             {backgrounds.iphoneX.map((val, index) => {
-              return (
-                <BackgorundsListItem
-                  index={index}
-                  key={index}
-                />
-              );
+              return <BackgorundsListItem index={index} key={index} />;
             })}
             {this.state.hint ? <Hint>{this.state.hint}</Hint> : null}
           </BackgorundsList>
         </BackgorundsListContainer>
+        <SecondColumn>
+          <Orientation />
+          <Delay />
+          <Sizes />
+        </SecondColumn>
       </Container>
     );
   }
@@ -113,8 +120,7 @@ const mapStateToProps = store => ({
   backgrounds: store.slideState.backgrounds
 });
 
-const mapDispatchToProps = dispatch =>
-  bindActionCreators({ addBg }, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators({ addBg }, dispatch);
 
 export default connect(
   mapStateToProps,

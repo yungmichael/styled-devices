@@ -25,7 +25,7 @@ class Slide extends Component {
         <IphoneX
           backgrounds={backgrounds.iphoneX}
           sizes={[0.8, 0.7, 0.5]}
-          delay={1000}
+          delay={5000}
         />
       );
     }
