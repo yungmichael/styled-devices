@@ -10,14 +10,29 @@ const Row = styled.div`
 `;
 
 const Size = styled.div`
-  height: 30px;
+  height: 34px;
   background: ${theme.color_secondary};
   color: ${theme.color_white};
   text-align: center;
   font-size: 14px;
+  line-height: 30px;
+  border: 1px solid ${theme.color_white};
+  border-right: none;
 `;
 
-const Value = styled.input``;
+const Value = styled.input`
+  width: 100%;
+  padding: 8px 16px;
+  background: ${theme.color_white};
+  list-style: none;
+  font-size: 14px;
+  border: 1px solid ${theme.text_color_grey};
+  z-index: 0;
+
+  :focus {
+    outline: none;
+  }
+`;
 
 export default function Table() {
   return (
