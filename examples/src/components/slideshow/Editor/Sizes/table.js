@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { theme } from "../../../../utils/theme";
+import { sizes, sizesArray } from "../../../../utils/screenSizes";
 
 const Container = styled.div``;
 
@@ -34,21 +35,15 @@ const Value = styled.input`
   }
 `;
 
-export default function Table() {
+export default function Table(props) {
   return (
     <Container>
-      <Row>
-        <Size>340 px</Size>
-        <Value value="0.5" />
-      </Row>
-      <Row>
-        <Size>560 px</Size>
-        <Value value="0.7" />
-      </Row>
-      <Row>
-        <Size>930 px</Size>
-        <Value value="0.8" />
-      </Row>
+      {props.sizes.reverse().map((val, i) => (
+        <Row>
+          <Size>{sizesArray[i]} px</Size>
+          <Value value={val} />
+        </Row>
+      ))}
     </Container>
   );
 }

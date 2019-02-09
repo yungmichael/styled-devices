@@ -16,7 +16,7 @@ const DeviceSlideshow = styled.div`
 
 class Slide extends Component {
   device(count) {
-    const { backgrounds } = this.props;
+    const { backgrounds, sizes } = this.props;
     let wpp1 = "https://i.imgur.com/7sy5OIT.jpg";
     let wpp2 = "https://i.imgur.com/uIN6Wxe.jpg";
 
@@ -24,7 +24,7 @@ class Slide extends Component {
       return (
         <IphoneX
           backgrounds={backgrounds.iphoneX}
-          sizes={[0.8, 0.7, 0.5]}
+          sizes={sizes.iphoneX}
           delay={5000}
         />
       );
@@ -56,7 +56,8 @@ class Slide extends Component {
 const mapStateToProps = store => ({
   currentDevice: store.slideState.currentDevice,
   devices: store.slideState.devices,
-  backgrounds: store.slideState.backgrounds
+  backgrounds: store.slideState.backgrounds,
+  sizes: store.slideState.sizes
 });
 
 export default connect(mapStateToProps)(Slide);

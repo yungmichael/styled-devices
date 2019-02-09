@@ -14,6 +14,9 @@ const initialState = {
       "https://i.imgur.com/x84OpQN.jpg",
       "https://i.imgur.com/EG4Lapn.png"
     ]
+  },
+  sizes: {
+    iphoneX: [0.8, 0.7, 0.5]
   }
 };
 

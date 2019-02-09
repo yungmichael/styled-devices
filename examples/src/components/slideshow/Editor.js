@@ -88,7 +88,7 @@ class Editor extends Component {
   }
 
   render() {
-    const { backgrounds } = this.props;
+    const { backgrounds, sizes } = this.props;
 
     return (
       <Container>
@@ -109,7 +109,7 @@ class Editor extends Component {
         <SecondColumn>
           <Orientation />
           <Delay />
-          <Sizes />
+          <Sizes sizes={sizes.iphoneX} />
         </SecondColumn>
       </Container>
     );
@@ -117,7 +117,8 @@ class Editor extends Component {
 }
 
 const mapStateToProps = store => ({
-  backgrounds: store.slideState.backgrounds
+  backgrounds: store.slideState.backgrounds,
+  sizes: store.slideState.sizes
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({ addBg }, dispatch);

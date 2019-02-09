@@ -23,7 +23,7 @@ export default class Sizes extends Component {
           <Title title="Sizes " />
           <AddSizeButton onClick={() => alert("clicked")} title="Add size" />
         </TitleContainer>
-        <Table />
+        <Table sizes={this.props.sizes} />
       </Container>
     );
   }
