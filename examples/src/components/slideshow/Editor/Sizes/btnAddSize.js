@@ -11,7 +11,6 @@ const Button = styled.div`
   color: #fff;
   font-size: 14px;
   cursor: pointer;
-  font-weight: lighter;
 `;
 
 export default function AddSizeButton(props) {
