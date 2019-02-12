@@ -30,7 +30,7 @@ const Size = styled.div`
   line-height: 28px;
   border: 1px solid ${theme.color_white};
   border-right: none;
-  margin: 0 10px;
+  margin: 0 7px;
   padding: 0 10px;
   border-radius: 8px;
 `;

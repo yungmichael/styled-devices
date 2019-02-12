@@ -3,7 +3,8 @@ import {
   PREV_DEVICE,
   ADD_BACKGROUND,
   DELETE_BACKGROUND,
-  CHANGE_BACKGROUND
+  CHANGE_BACKGROUND,
+  ADD_SIZE
 } from "../actions/actionTypes";
 
 const initialState = {
@@ -78,6 +79,17 @@ export const slideReducer = (state = initialState, action = {}) => {
         backgrounds: {
           ...state.backgrounds,
           iphoneX: newIphone
+        }
+      };
+
+    case ADD_SIZE:
+      let _sizes = state.sizes.iphoneX;
+      _sizes.push(1.0);
+
+      return {
+        ...state,
+        sizes: {
+          iphoneX: _sizes
         }
       };
 
