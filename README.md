@@ -29,7 +29,7 @@ class App extends Component {
     return (
       <div>
         <IphoneX
-          background={["https://bit.ly/2T8fDWo"]}
+          backgrounds={["https://bit.ly/2T8fDWo"]}
           sizes={[0.9, 0.8, 0.5]}
           delay={10000}
           landscape
